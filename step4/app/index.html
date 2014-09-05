@@ -1,0 +1,106 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS Todo App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/todo.css">
+
+
+    <link rel="stylesheet" href="components/todo-widget/todo-widget.css">
+    <link rel="stylesheet" href="sections/landing/landing.css">
+    <link rel="stylesheet" href="sections/create-update-todo/create-update.css">
+    <!-- endbuild -->
+</head>
+<body >
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="vendors/es5-shim.js"></script>
+<script src="vendors/json3.min.js"></script>
+<![endif]-->
+<div ng-app="todoApp" class="ng-cloak">
+
+  <div class="landing-page" ng-controller="LandingCtrl as lCtrl">
+    <div class="card-container" ng-repeat="todo in lCtrl.todos">
+      <div>
+        <div class="todo-card" ng-class="lCtrl.getTodoClass(todo)">
+          <div class="row">
+            <div>
+              <span class="title">Author:</span>
+              <span class="author" ng-bind="todo.author">Shyam Seshadri</span>
+            </div>
+            <div class="todo-title" ng-bind="todo.title">This is the {{0+1}}st todo</div>
+            <div>
+              <span class="title">Due On:</span>
+              <span class="date" ng-bind="todo.dueOn"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row form-holder" ng-controller="CreateCtrl as ctrl">
+    <div class="alert alert-info" ng-bind="ctrl.message" ng-show="ctrl.message"></div>
+    <form name="todoForm" ng-submit="ctrl.addTodo()">
+      <div class="form-group">
+        <input type="text" placeholder="Author" ng-model="ctrl.todo.author" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Title" ng-model="ctrl.todo.title" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Add Description" ng-model="ctrl.todo.description" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <input type="date" placeholder="Due On" ng-model="ctrl.todo.dueOn" class="form-control" required="">
+      </div>
+      <div class="form-group pull-right">
+        <input type="submit" class="btn btn-success" value="Submit" ng-disabled="todoForm.$invalid">
+      </div>
+    </form>
+
+  </div>
+
+
+</div>
+
+<script src="vendors/jquery.js"></script>
+<script src="vendors/jquery-ui-1.10.2.custom.js"></script>
+<script src="vendors/angular.js"></script>
+<script src="vendors/angular-route.js"></script>
+<script src="vendors/angular-animate.js"></script>
+
+<!--ng slider-->
+
+<!-- build:js scripts/plugins.js -->
+
+<script src="app.js"></script>
+    <!--controllers-->
+<script src="sections/create-update-todo/create-controller.js"></script>
+<script src="sections/create-update-todo/update-controller.js"></script>
+<script src="sections/landing/landing-controller.js"></script>
+
+    <!--components-->
+<script src="components/todo-service/todo-service.js"></script>
+<script src="components/todo-widget/todoWidget-directive.js"></script>
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<!-- endbuild -->
+
+</body>
+</html>

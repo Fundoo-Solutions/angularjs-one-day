@@ -1,0 +1,31 @@
+.todo-card {
+  -moz-box-shadow:    4px 5px 5px 3px #ccc;
+  -webkit-box-shadow: 4px 5px 5px 3px #ccc;
+  box-shadow:         4px 5px 5px 3px #ccc;
+  height: 165px;
+  width: 290px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 7px;
+  background-color: white;
+}
+.title {
+  font-size: 17px;
+  margin-left: 20px;
+  text-decoration: underline;
+}
+.author {
+  font-family: monospace;
+  font-size: 15px;
+}
+.todo-title {
+  font-size: 20px;
+  font-style: oblique;
+  margin-left: 20px;
+}
+.date {
+  font-size: 16px;
+}
+.btn-bar {
+  margin-top: 20px;
+}
