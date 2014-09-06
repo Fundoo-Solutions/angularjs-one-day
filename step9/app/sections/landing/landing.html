@@ -13,7 +13,14 @@
             <span class="date" ng-bind="todo.dueOn"></span>
           </div>
         </div>
-      </div>
+
+        <div class="row btn-bar pull-right">
+          <a ng-href="#/edit/{{todo.id}}"
+             class="btn btn-info"
+             title="Edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+        </div>
     </div>
   </div>
 </div>
