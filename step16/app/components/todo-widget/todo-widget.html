@@ -1,0 +1,27 @@
+<div class="todo-card" ng-class="getTodoClass(todo)">
+  <div class="row">
+    <div>
+      <span class="title">Author:</span>
+      <span class="author" ng-bind="todo.author"></span>
+    </div>
+    <div class="todo-title" ng-bind="todo.title"></div>
+    <div>
+      <span class="title">Due On:</span>
+      <span class="date" ng-bind="todo.dueOn"></span>
+    </div>
+  </div>
+
+  <div class="row btn-bar pull-right">
+    <a ng-href="#/edit/{{todo.id}}"
+       class="btn btn-info"
+       title="Edit">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <button
+        ng-click="deleteTodo()"
+       class="btn btn-danger"
+       title="Delete">
+      <i class="glyphicon glyphicon-trash"></i>
+    </button>
+  </div>
+</div>

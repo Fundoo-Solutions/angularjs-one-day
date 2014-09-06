@@ -1,0 +1,7 @@
+<div class="landing-page" ng-controller="LandingCtrl as lCtrl">
+  <div class="card-container" ng-repeat="eachTodo in lCtrl.todos">
+    <div todo-widget todo-data="eachTodo" when-delete="lCtrl.reload()">
+
+    </div>
+  </div>
+</div>

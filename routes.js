@@ -41,5 +41,5 @@ exports.routes = function(app, todos_json) {
 
   app.post('/api/todo', individualRoutes.addTodo);
   app.post('/api/todo/:id', individualRoutes.updateTodo);
-  app.del('/api/todo/delete/:id', individualRoutes.deleteTodo);
+  app.del('/api/todo/:id', individualRoutes.deleteTodo);
 };
