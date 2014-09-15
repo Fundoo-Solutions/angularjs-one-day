@@ -28,4 +28,3 @@ var EditPage = (function() {
 })();
 
 module.exports = EditPage;
-
