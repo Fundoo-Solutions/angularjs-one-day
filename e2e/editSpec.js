@@ -1,7 +1,3 @@
-/**
- * Created by surya on 15/9/14.
- */
-
 
 var TodoListPage = require('./todoListPage');
 var EditPage = require('./editPage');

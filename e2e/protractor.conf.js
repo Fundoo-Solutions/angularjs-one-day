@@ -1,6 +1,3 @@
-/**
- * Created by surya on 15/9/14.
- */
 exports.config = {
 // The address of a running Selenium server
   seleniumAddress: 'http://localhost:4444/wd/hub',

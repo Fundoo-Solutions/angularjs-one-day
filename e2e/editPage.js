@@ -1,9 +1,3 @@
-/**
- * Created by surya on 15/9/14.
- */
-// The PageObjects are ideally in separate files
-// to allow for reuse across all the tests,
-// but are listed here together for ease of understanding
 var EditPage = (function() {
   function EditPage() {
     this.open = function() {
